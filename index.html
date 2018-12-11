@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modular multiplication</title>
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <meta name="description" content="" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+    <meta name="twitter:title" content="Modular Multiplication">
+    <meta name="twitter:description" content="Visualizing modular multiplication on the unit circle">
+    <meta name="twitter:image" content="https://nathanielwroblewski.github.com/modular-multiplication/public/images/screenshot.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Modular Multiplication" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://nathanielwroblewski.github.com/modular-multiplication" />
+    <meta property="og:image" content="https://nathanielwroblewski.github.com/modular-multiplication/public/images/screenshot.png" />
+    <meta property="og:description" content="Visualizing modular multiplication on the unit circle" />
+    <meta property="og:site_name" content="Modular Multiplication" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Modular Multiplication">
+    <meta itemprop="description" content="Visualizing modular multiplication on the unit circle">
+    <meta itemprop="image" content="https://nathanielwroblewski.github.com/modular-multiplication/public/images/screenshot.png">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Modular multiplication</h1>
+      <p class="subtitle">inspired by the work of mathematician Simon Plouffe</p>
+      <section>
+        <noscript>
+          <p class="text">
+            This site relies on javascript for proper operation.  Please consider enabling javascript for the full experience.
+          </p>
+        </noscript>
+        <p class="text">
+          In mathematics, a <defn>multiplication table</defn> or <defn>times table</defn> defines a multipli-cation operation for an algebraic system.  In the States, many educators teach elementary decimal multiplication with times tables up to 9 &times; 9.
+        </p>
+        <figure class="figure one">
+          <figcaption class="figure-title">
+            Fig. 1: Decimal multiplication table for the integers between 0&ndash;9
+          </figcaption>
+          <table class="times-table"></table>
+        </figure>
+        <p class="text">
+          In <defn>modular arithmetic</defn>, for a positive integer <i>n</i>, two numbers <i>a</i> and <i>b</i> are said to be <defn>congruent modulo n</defn>, if their difference <i>a</i> &minus; <i>b</i> is an integer multiple of <i>n</i> (that is, there is an integer <i>k</i> such that <i>a</i> &minus; <i>b</i> &equals; <i>nk</i>). This congruence relation is typically denoted <i>a</i> &Congruent; <i>b</i> (mod <i>n</i>).
+        </p>
+        <p class="text">
+          A familiar example of modular arithmetic is the 12-hour clock where numbers "wrap around" upon reaching the modulus (12). We can determine congruence between a certain hour on the 24-hour clock with an hour on the 12-hour clock using modular arithmetic: 15:00 is congruent to 3:00 because 15 - 3 is 12, an integer multiple 12.
+        </p>
+        <figure class="figure two">
+          <figcaption class="figure-title">
+            Fig. 2: ab (mod 12) multiplication table for the integers between 0&ndash;12
+          </figcaption>
+          <table class="modular times-table"></table>
+        </figure>
+        <p class="text">
+          By relating points on a unit circle, modular multiplication can be visualized another way.  In the figure below, <i>b</i> and <i>n</i> remain constant at <i>b</i> &equals; 2 and <i>n</i> &equals; 12, while <i>a</i> is incremented from zero. For each <i>a</i>, we take the product of <i>ab</i> (mod <i>n</i>) and trace a line from <i>a</i> on the unit circle to the product <i>ab</i> (mod <i>n</i>).
+        </p>
+        <figure class="figure three">
+          <figcaption class="figure-title">
+            Fig. 3: Modular multiplication for <i>ab</i> (mod 12) where <i>b</i> &equals; 2
+          </figcaption>
+          <canvas class="canvas" width="600px" height="400px"></canvas>
+        </figure>
+        <p class="text">
+          As <i>a</i> is incremented, the same relations are repeated. Because of this, all values of <i>a</i> when <i>b</i> &equals; 2 and <i>n</i> &equals; 12 can be displayed simultaneously. This is akin to displaying a single row or column in a times table.
+        </p>
+        <figure class="figure four">
+          <figcaption class="figure-title">
+            Fig. 4: Visualizing <i>2a</i> (mod 12) for all <i>a</i>
+          </figcaption>
+          <canvas class="canvas" width="600px" height="400px"></canvas>
+        </figure>
+        <p class="text">
+          Staying within this single row/column, we can still vary the modulus <i>n</i>. For <i>b</i> &equals; 2 and all <i>a</i>, increasing the modulus has the effect of revealing better and better approximations of a <defn>cardioid</defn>.
+        </p>
+        <figure class="figure five">
+          <figcaption class="figure-title">
+            Fig. 5: Visualizing <i>2a</i> (mod n) for all <i>a</i> and <i>n</i> from 2&ndash;75
+          </figcaption>
+          <canvas class="canvas" width="600px" height="400px"></canvas>
+        </figure>
+        <p class="text">
+          The resulting cardioid occurs in many places: in the epicycloid of two circles with equal radii where (<i>R</i> + <i>r</i>) / <i>r</i> &equals; 2, in elliptical catacaustics, and as the main continent in the Mandelbrot set where <i>f</i><sub><i>c</i></sub><i>(z)</i> &equals; <i>z</i><sup>2</sup> + <i>c</i>
+        </p>
+        <figure class="figure six">
+          <figcaption class="figure-title">
+            Fig. 6: Examples of cardioids
+          </figcaption>
+          <div class="two examples">
+            <div class="canvas-container">
+              <canvas class="background" width="300px" height="300px"></canvas>
+              <canvas class="foreground" width="300px" height="300px"></canvas>
+            </div>
+            <canvas class="mandelbrot" width="300px" height="300px"></canvas>
+          </div>
+        </figure>
+        <p class="text">
+          Moving to the next column for <i>b</i> &equals; 3 and for all <i>a</i>, increasing the modulus has the effect of revealing a <defn>nephroid</defn>.
+        </p>
+        <figure class="figure seven">
+          <figcaption class="figure-title">
+            Fig. 7: Emergence of nephroid in <i>3a</i> (mod n) for all <i>a</i> and <i>n</i> from 2&ndash;75
+          </figcaption>
+          <canvas class="canvas" width="600px" height="400px"></canvas>
+        </figure>
+        <p class="text">
+          The resulting nephroid occurs in many similar places: in the epicycloid of two circles where (<i>R</i> + <i>r</i>) / <i>r</i> &equals; 3, in circular catacaustics, and as the main continent in the Multibrot set where <i>f</i><sub><i>c</i></sub><i>(z)</i> &equals; <i>z</i><sup>3</sup> + <i>c</i>.
+        </p>
+        <figure class="figure eight">
+          <figcaption class="figure-title">
+            Fig. 8: Examples of nephroids
+          </figcaption>
+          <div class="three examples">
+            <div class="canvas-container">
+              <canvas class="background" width="200px" height="200px"></canvas>
+              <canvas class="foreground" width="200px" height="200px"></canvas>
+            </div>
+            <img class="image" src="/public/images/cup.png" />
+            <canvas class="mandelbrot" width="200px" height="200px"></canvas>
+          </div>
+        </figure>
+        <p class="text">
+          Predictably, the relations hold for the next column as well where <i>b</i> &equals; 4.
+        </p>
+        <figure class="figure nine">
+          <figcaption class="figure-title">
+            Fig. 9: Emergence of epicycloid in <i>4a</i> (mod n) for all <i>a</i> and <i>n</i> from 2&ndash;75
+          </figcaption>
+          <canvas class="canvas" width="600px" height="400px"></canvas>
+        </figure>
+        <p class="text">
+          This epicycloid appears when (<i>R</i> + <i>r</i>) / <i>r</i> &equals; 4. It also appears as the main continent in the Multibrot set where <i>f</i><sub><i>c</i></sub><i>(z)</i> &equals; <i>z</i><sup>4</sup> + <i>c</i>.
+        </p>
+        <figure class="figure ten">
+          <figcaption class="figure-title">
+            Fig. 10: Examples of other epicycloids
+          </figcaption>
+          <div class="two examples">
+            <div class="canvas-container">
+              <canvas class="background" width="300px" height="300px"></canvas>
+              <canvas class="foreground" width="300px" height="300px"></canvas>
+            </div>
+            <canvas class="mandelbrot" width="300px" height="300px"></canvas>
+          </div>
+        </figure>
+        <p class="text">
+          The most obvious method for constructing the full multiplication table in this visual style is to concatenate each row/column, creating a figure very much like the tables above:
+        </p>
+        <figure class="figure eleven">
+          <figcaption class="figure-title">
+            Fig. 11: Visual modular-multiplication table
+          </figcaption>
+          <canvas class="two" height="140px" width="140px"></canvas>
+          <canvas class="three" height="140px" width="140px"></canvas>
+          <canvas class="four" height="140px" width="140px"></canvas>
+          <canvas class="five" height="140px" width="140px"></canvas>
+          <canvas class="six" height="140px" width="140px"></canvas>
+          <canvas class="seven" height="140px" width="140px"></canvas>
+          <canvas class="eight" height="140px" width="140px"></canvas>
+          <canvas class="nine" height="140px" width="140px"></canvas>
+          <canvas class="ten" height="140px" width="140px"></canvas>
+          <canvas class="eleven" height="140px" width="140px"></canvas>
+          <canvas class="twelve" height="140px" width="140px"></canvas>
+          <canvas class="thirteen" height="140px" width="140px"></canvas>
+        </figure>
+        <p class="text">
+          But we can also pan across columns or rows in the multiplication table by continuously varying <i>b</i> for constant <i>a</i> and constant <i>n</i>.
+        </p>
+        <figure class="figure twelve">
+          <figcaption class="figure-title">
+            Fig. 12: Visualizing <i>2b</i>(mod <i>200</i>) as <i>b</i> varies continuously from 0&ndash;200
+          </figcaption>
+          <div class="canvas-container">
+            <canvas class="background-modulus" width="600px" height="400px"></canvas>
+            <canvas class="foreground-multiplication" width="600px" height="400px"></canvas>
+          </div>
+        </figure>
+      </section>
+    </div>
+  </body>
+  <script type="module" src="/public/javascripts/main.js"></script>
+</html>
